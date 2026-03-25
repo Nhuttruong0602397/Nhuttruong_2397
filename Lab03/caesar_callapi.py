@@ -27,7 +27,6 @@ class MyApp(QMainWindow):
             if response.status_code == 200:
                 data = response.json()
 
-                # ✅ sửa đúng cho QPlainTextEdit
                 self.ui.txtCiphertext.setPlainText(data["encrypted_message"])
 
                 msg = QMessageBox()
@@ -51,8 +50,6 @@ class MyApp(QMainWindow):
             response = requests.post(url, json=payload)
             if response.status_code == 200:
                 data = response.json()
-
-                # ✅ sửa đúng cho QPlainTextEdit
                 self.ui.txtPlanText.setPlainText(data["decrypted_message"])
 
                 msg = QMessageBox()
